@@ -44,7 +44,7 @@
       </uap:VisualElements>
       <Extensions>
         <uap3:Extension Category="windows.appExtension">
-          <uap3:AppExtension Name="dbenne.facts.factpack.1.0" Id="base" PublicFolder="Public" DisplayName="Invert" Description="Invert Image" />
+          <uap3:AppExtension Name="build2016.appextensibility.demo" Id="base" PublicFolder="Public" DisplayName="Invert" Description="Invert Image" />
         </uap3:Extension>
       </Extensions>
     </Application>
