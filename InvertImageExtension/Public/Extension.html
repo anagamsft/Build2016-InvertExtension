@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<body>
+    <canvas id="inPicture" class="image-container"></canvas>
+    <canvas id="outPicture" class="image-container"></canvas>
+    <script type="text/javascript">
+
+        var tempImageStore = new Image();
+        var inCanvas = document.getElementById('inPicture'),
+            inContext = inCanvas.getContext('2d');
+        var outCanvas = document.getElementById('outPicture'),
+            outContext = outCanvas.getContext('2d');
+
+        var picData, data;
+
+        function extensionLoad(url) {
+            
+            tempImageStore.src = url;
+            inCanvas.height = tempImageStore.height;
+            inCanvas.width = tempImageStore.width;
+            inContext.drawImage(tempImageStore, 0, 0);
+            outCanvas.height = tempImageStore.height;
+            outCanvas.width = tempImageStore.width;
+            outContext.drawImage(tempImageStore, 0, 0);
+
+            picData = inContext.getImageData(0, 0, inCanvas.width, inCanvas.height);
+            data = picData.data;
+
+            for (var px = 0; px < data.length; px += 4) {
+                data[px] = 255 - data[px];
+                data[px + 1] = 255 - data[px + 1];
+                data[px + 2] = 255 - data[px + 2];
+            }
+            outContext.putImageData(picData, 0, 0);
+            
+            var sendYourDataUrl = outCanvas.toDataURL();
+            console.log("Done");
+
+            // this ios the callback
+            window.external.notify(sendYourDataUrl);
+        }
+    </script>
+</body>
+</html>
