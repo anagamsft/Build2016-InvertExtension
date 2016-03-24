@@ -19,6 +19,7 @@
     <PackageCertificateKeyFile>InvertImageExtension_TemporaryKey.pfx</PackageCertificateKeyFile>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Never</AppxBundle>
+    <PackageCertificateThumbprint>6D443E77B08CDDD3E712DC88E223B3FBA7D6A5E1</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
