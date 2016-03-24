@@ -95,6 +95,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
     <Content Include="Public\Extension.html" />
     <None Include="project.json" />
   </ItemGroup>
